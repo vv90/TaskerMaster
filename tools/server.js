@@ -5,6 +5,9 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var path = require('path');
+var webpack = require('webpack');
+var webpackConfig = require('../webpack.config.dev');
 
 
 var app = express();
@@ -12,6 +15,10 @@ var port = 8080;
 
 var Task = require('./models/task');
 
+app.use(require('webpack-dev-middleware')(webpack(webpackConfig), {
+	publicPath: webpackConfig.output.publicPath,
+	stats: { colors: true }
+}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -93,7 +100,7 @@ mongoose.connect('mongodb://localhost/TaskerMaster');
 
 app.use('/api', router);
 app.get('/', function(req, res) {
-	res.json({message: 'It works'});
+	res.sendFile(path.join(__dirname, '../index.html'))
 });
 
 app.listen(port);
