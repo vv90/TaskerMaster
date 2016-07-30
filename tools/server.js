@@ -34,7 +34,7 @@ router.get('/', function(req, res) {
 	res.json({message: 'api is working'});
 });
 
-router.route('/task')
+router.route('/tasks')
 	.post(function(req, res){
 		var task = new Task();
 		task.name = req.body.name;

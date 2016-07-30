@@ -3,7 +3,20 @@
  */
 
 import * as types from './actionTypes';
+import api from '../api';
 
-export function createTask(task) {
-	return { type: types.CREATE_TASK, task: task };
+export function loadTasksSuccess(tasks) {
+	return { type: types.LOAD_TASKS_SUCCESS, tasks: tasks };
+}
+
+export function loadTasks() {
+	return function(dispatch) {
+		return api.tasks.getAll()
+			.then(tasks => {
+				dispatch(loadTasksSuccess(tasks));
+			})
+			.catch(error => {
+				throw (error);
+			});
+	}
 }

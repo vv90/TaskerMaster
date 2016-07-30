@@ -2,10 +2,10 @@
  * Created by Vladimir on 7/30/2016.
  */
 import {combineReducers} from 'redux';
-import tasks from './taskReducer';
+import taskReducer from './taskReducer';
 
 const rootReducer = combineReducers({
-	tasks: tasks
+	tasks: taskReducer
 });
 
 export default rootReducer;
