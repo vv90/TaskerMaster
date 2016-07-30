@@ -1,0 +1,60 @@
+body {
+	background-color: #f3f3f4;
+	margin: 0;
+}
+
+.app-container {
+	width: 1200px;
+	margin: auto;
+}
+
+.view-container {
+	margin: 0 10px 0 10px;
+}
+
+.nav {
+	background-color: #2f4050;
+	color: #cfd2da;
+	line-height: 4em;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.nav-item {
+	margin-left: 20px;
+	font-size: 1.5em;
+	color: #cfd2da;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.nav-item:hover {
+	color: white;
+}
+
+.nav-item-active {
+	color: white;
+	border-bottom: 4px solid #19aa8d;
+}
+
+.task-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.task-item {
+	border-radius: 5px;
+	background-color: #23c6c8;
+	color: white;
+	padding: 20px;
+	margin-bottom: 10px;
+}
+
+.task-item h1 {
+	margin: 10px 0 10px 0;
+}
+
+.task-item h3 {
+	margin: 0;
+}

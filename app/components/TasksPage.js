@@ -9,24 +9,15 @@ import * as taskActions from '../actions/taskActions';
 
 const TaskList = function ({tasks}) {
 	return (
-		<table>
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Created</th>
-					<th>Finished</th>
-				</tr>
-			</thead>
-			<tbody>
+		<ul className="task-list">
 			{tasks.map((task, index)=> (
-				<tr key={index}>
-					<td>{task.name}</td>
-					<td>{task.dateCreated}</td>
-					<td>{task.finished ? task.dateFinished : "Not finished"}</td>
-				</tr>
+				<li key={index} className="task-item">
+					<h1>{task.name || "no name"}</h1>
+					<h3>{task.dateCreated}</h3>
+					<span>{task.finished ? task.dateFinished : "Not finished"}</span>
+				</li>
 			))}
-			</tbody>
-		</table>
+		</ul>
 	);
 };
 TaskList.propTypes = {

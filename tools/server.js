@@ -99,7 +99,7 @@ router.route('/task/:taskId')
 mongoose.connect('mongodb://localhost/TaskerMaster');
 
 app.use('/api', router);
-app.get('/', function(req, res) {
+app.get('*', function(req, res) {
 	res.sendFile(path.join(__dirname, '../index.html'))
 });
 

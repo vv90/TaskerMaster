@@ -9,6 +9,8 @@ import configureStore from './store/configureStore';
 import {Provider} from 'react-redux';
 import {loadTasks} from './actions/taskActions';
 
+import './styles.css';
+
 const store = configureStore();
 store.dispatch(loadTasks());
 

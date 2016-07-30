@@ -6,9 +6,9 @@ import {Link, IndexLink} from 'react-router';
 
 const Header = (props) => {
 	return (
-		<nav>
-			<IndexLink to="/" activeClassName="active">Home</IndexLink>
-			<Link to="/tasks" activeClassName="active">Tasks</Link>
+		<nav className="nav">
+			<IndexLink to="/" className="nav-item" activeClassName="nav-item-active">Home</IndexLink>
+			<Link to="/tasks" className="nav-item" activeClassName="nav-item-active">Tasks</Link>
 		</nav>
 	);
 };
@@ -18,7 +18,9 @@ class App extends React.Component {
 		return (
 			<div className="app-container">
 				<Header />
-				{this.props.children}
+				<div className="view-container">
+					{this.props.children}
+				</div>
 			</div>
 		);
 	}
