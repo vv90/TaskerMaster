@@ -3,6 +3,7 @@
  */
 
 import React, {PropTypes} from 'react';
+import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as taskActions from '../actions/taskActions';
@@ -12,7 +13,7 @@ const TaskList = function ({tasks}) {
 		<ul className="task-list">
 			{tasks.map((task, index)=> (
 				<li key={index} className="task-item">
-					<h1>{task.name || "no name"}</h1>
+					<h1><Link to={`/tasks/${task._id}`}>{task.name || "no name"}</Link></h1>
 					<h3>{task.dateCreated}</h3>
 					<span>{task.finished ? task.dateFinished : "Not finished"}</span>
 				</li>
